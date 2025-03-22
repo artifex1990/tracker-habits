@@ -119,7 +119,7 @@ function addDays(event) {
         return habbit;
     });
 
-    reset
+    resetForm(event.target, ['comment']);
     rerender(globalActiveHabbitId);
     saveData();
 } 
@@ -215,7 +215,7 @@ function addHabbit(event) {
 /* init */
 (() => {
     loadData();
-    const hashId =Number(document.location.hash.replace('#', ''));
+    const hashId = Number(document.location.hash.replace('#', ''));
     const urlHabbit = habbits.find(habbit => habbit.id == hashId);
 
     if (urlHabbit) {
